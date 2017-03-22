@@ -10,3 +10,5 @@ sort
 test_data/input.txt
 tools/util-average
 out/*
+html
+latex
