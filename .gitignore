@@ -12,3 +12,4 @@ tools/util-average
 out/*
 html
 latex
+*random_words.txt

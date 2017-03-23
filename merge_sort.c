@@ -12,12 +12,6 @@ llist_t *sort_n_merge(llist_t *a, llist_t *b)
     node_t *current = NULL;
     while (a->size && b->size) {
         /* Choose the linked list whose data of first node is small. */
-        //int greater = strcmp((char*)(a->head->data), (char*)(b->head->data));
-        /*
-        llist_t *small = (llist_t *)
-                         ((intptr_t) a * (a->head->data <= b->head->data) +
-                          (intptr_t) b * (a->head->data > b->head->data));
-        */
         llist_t *small;
         if (strcmp((char*)(a->head->data), (char*)(b->head->data)) < 0) {
             small = (llist_t*)a;
