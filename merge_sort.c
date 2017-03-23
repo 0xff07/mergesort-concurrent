@@ -1,19 +1,30 @@
 #include <stdlib.h>
-
+#include <string.h>
 #include "merge_sort.h"
 
 /**
  * @brief Sort and merge the two lists _a_ and _b_.
  */
+
 llist_t *sort_n_merge(llist_t *a, llist_t *b)
 {
     llist_t *_list = list_new();
     node_t *current = NULL;
     while (a->size && b->size) {
         /* Choose the linked list whose data of first node is small. */
+        //int greater = strcmp((char*)(a->head->data), (char*)(b->head->data));
+        /*
         llist_t *small = (llist_t *)
                          ((intptr_t) a * (a->head->data <= b->head->data) +
                           (intptr_t) b * (a->head->data > b->head->data));
+        */
+        llist_t *small;
+        if (strcmp((char*)(a->head->data), (char*)(b->head->data)) < 0) {
+            small = (llist_t*)a;
+        } else {
+            small = (llist_t*)b;
+        }
+
         /* Extract first node of selected list and put to the new list. */
         if (current) {
             current->next = small->head;
